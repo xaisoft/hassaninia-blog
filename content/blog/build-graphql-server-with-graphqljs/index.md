@@ -7,7 +7,7 @@ description: Build a GraphQL Server with graphqljs
 Hi and welcome. Today we are going to build a graphql server using graphqljs.
 Before we get started, we need to make sure we have node installed. In a command prompt, run the following command:
 
-```
+```console
 node -v
 ```
 
