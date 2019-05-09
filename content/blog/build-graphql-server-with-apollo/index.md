@@ -4,4 +4,4 @@ date: "2019-05-09"
 description: Build a GraphQL Server with Apollo
 ---
 
-Hello
+Today we are going to build a GraphQL Server for querying the OMDB(Online Movie Database) API.
