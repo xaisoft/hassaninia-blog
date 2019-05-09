@@ -40,9 +40,13 @@ The above says, when we query for `movies`, we should get back an array of strin
 ```
 const root = {
     movies: () => {
-        return ['The Dark Knight', 'Inception', 'Interstellar', 'Batman Begins', 'E.T. the Extra-Terrestrial', 'Jurassic Park', 'Hook', 'Indiana Jones and the Last Crusade', 'Catch Me If You Can', 'Stand by Me', 'A Few Good Men']
+        return ['The Dark Knight', 'Inception', 'Interstellar',
+        'Batman Begins', 'E.T. the Extra-Terrestrial', 'Jurassic Park',
+        'Hook', 'Indiana Jones and the Last Crusade', 'Catch Me If You Can',
+        'Stand by Me', 'A Few Good Men']
     }
 }`
+
 ```
 
 In the above case, we have defined a root resolver. This means that you can query for movies at the top level. So sending `{movies}` to graphql should return an array of movies.
