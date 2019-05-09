@@ -1,15 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `hassaninia.com Blog`,
+    title: `Hassaninia Blog`,
     author: `Saied Hassaninia`,
     description: `A blog for hassaninia.com.`,
     siteUrl: `https://hassaninia.com`,
     social: {
-      twitter: `hassaninia`,
+      twitter: `@hassaninia1`,
     },
   },
-  plugins: [
-    {
+  plugins: [{
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -26,8 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
+        plugins: [{
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
