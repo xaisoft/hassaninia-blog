@@ -11,7 +11,7 @@ exports.createPages = ({
     createPage
   } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.jsx`)
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
     `
       {
