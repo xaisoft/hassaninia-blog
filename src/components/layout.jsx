@@ -2,13 +2,25 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import Menu from "./menu"
 
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
-
+    const headerLink = (
+      <Link
+        style={{
+          boxShadow: `none`,
+          textDecoration: `none`,
+          color: `inherit`,
+        }}
+        to={`/`}
+      >
+        {title}
+      </Link>
+    )
     if (location.pathname === rootPath) {
       header = (
         <h1
@@ -18,16 +30,7 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
+          {headerLink}
         </h1>
       )
     } else {
@@ -38,16 +41,7 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
+          {headerLink}
         </h3>
       )
     }
@@ -60,7 +54,12 @@ class Layout extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header>
+          <nav>
+            <Menu />
+          </nav>
+          {header}
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}
