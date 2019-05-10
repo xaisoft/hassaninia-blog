@@ -8,14 +8,13 @@ const Menu = () => {
         style={{
           listStyle: "none",
           display: "flex",
-          justifyContent: "space-evenly",
-          listStyle:'none'
+          justifyContent: "space-evenly"
         }}
       >
-        <li style={{border:'1px solid purple'}}>
+        <li style={{border:'1px solid purple',padding:'10px'}}>
           <Link to="/">Home</Link>
         </li>
-        <li style={{border:'1px solid purple'}}>
+        <li style={{border:'1px solid purple',padding:'10px'}}>
           <Link to="/">Blog</Link>
         </li>
       </ul>
