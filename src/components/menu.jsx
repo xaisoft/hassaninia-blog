@@ -1,7 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
-const Menu = () => {
+const Menu = props => {
+  console.log("menu data => ", props)
   return (
     <div style={{ paddingTop: "10px" }}>
       <ul
@@ -41,3 +42,27 @@ const Menu = () => {
 }
 
 export default Menu
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  }
+`
