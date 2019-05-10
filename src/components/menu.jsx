@@ -12,10 +12,10 @@ const Menu = () => {
         }}
       >
         <li style={{border:'1px solid purple',padding:'10px'}}>
-          <Link to="/">Home</Link>
+          <Link to="/" style={{textDecoration:'none'}}>Home</Link>
         </li>
         <li style={{border:'1px solid purple',padding:'10px'}}>
-          <Link to="/">Blog</Link>
+          <Link to="/" style={{textDecoration:'none'}}>Blog</Link>
         </li>
       </ul>
     </div>
