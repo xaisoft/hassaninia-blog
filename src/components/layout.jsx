@@ -4,70 +4,68 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import Menu from "./menu"
 
-class Layout extends React.Component {
-  render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-    const headerLink = (
-      <Link
+const Layout = props => {
+  const { location, title, children } = props
+  const rootPath = `${__PATH_PREFIX__}/`
+  let header
+  const headerLink = (
+    <Link
+      style={{
+        boxShadow: `none`,
+        textDecoration: `none`,
+        color: `inherit`,
+      }}
+      to={`/`}
+    >
+      {title}
+    </Link>
+  )
+  if (location.pathname === rootPath) {
+    header = (
+      <h1
         style={{
-          boxShadow: `none`,
-          textDecoration: `none`,
-          color: `inherit`,
+          ...scale(1.5),
+          marginBottom: rhythm(1.5),
+          marginTop: 0,
         }}
-        to={`/`}
       >
-        {title}
-      </Link>
+        {headerLink}
+      </h1>
     )
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          {headerLink}
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          {headerLink}
-        </h3>
-      )
-    }
-    return (
-      <div
+  } else {
+    header = (
+      <h3
         style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          fontFamily: `Montserrat, sans-serif`,
+          marginTop: 0,
         }}
       >
-        <header>
-          <nav>
-            <Menu />
-          </nav>
-          {header}
-        </header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}
-          <a href="https://www.hassaninia.com">Hassaninia</a>
-        </footer>
-      </div>
+        {headerLink}
+      </h3>
     )
   }
+  return (
+    <div
+      style={{
+        marginLeft: `auto`,
+        marginRight: `auto`,
+        maxWidth: rhythm(24),
+        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      }}
+    >
+      <header>
+        <nav>
+          <Menu />
+        </nav>
+        {header}
+      </header>
+      <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()}
+        <a href="https://www.hassaninia.com">Hassaninia</a>
+      </footer>
+    </div>
+  )
 }
 
 export default Layout

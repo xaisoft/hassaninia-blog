@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 const Menu = props => {
-  console.log("menu data => ", props)
   return (
     <div style={{ paddingTop: "10px" }}>
       <ul
