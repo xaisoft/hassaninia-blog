@@ -9,7 +9,7 @@ Below we have a class component that we want to refactor into a functional compo
 ```js
 import React from "react"
 
-class Menu extends React.Component() {
+class Menu extends React.Component {
   render() {
     return (
       <header>
@@ -26,7 +26,7 @@ In functional components, we no longer need to return our `JSX` inside a `render
 ```js
 import React from "react"
 
-class Menu extends React.Component() {
+class Menu extends React.Component {
     return (
       <header>
         <h1>{this.props.title}</h1>
@@ -39,10 +39,16 @@ class Menu extends React.Component() {
 Let's replace
 
 ```js
-class Menu extends React.Component()
+class Menu extends React.Component
 ```
 
 with:
+
+```js
+const Menu = () =>
+```
+
+Our component should now like like the following:
 
 ```js
 import React from "react"
