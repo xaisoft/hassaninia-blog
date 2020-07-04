@@ -62,7 +62,7 @@ const Layout = props => {
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}
-        <a href="https://www.hassaninia.com">Hassaninia</a>
+        <a href="https://www.hassaninia.com">&amp;Hassaninia</a>
       </footer>
     </div>
   )
