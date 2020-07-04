@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import Menu from "./menu"
-
+import layoutStyles from "./layout.module.css"
 const Layout = props => {
   const { location, title, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
@@ -37,7 +37,7 @@ const Layout = props => {
       <h3
         style={{
           fontFamily: `Montserrat, sans-serif`,
-          marginTop: 0,
+          marginTop: 0, 
         }}
       >
         {headerLink}
@@ -46,12 +46,7 @@ const Layout = props => {
   }
   return (
     <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
+      className={layoutStyles.container}
     >
       <header>
         <nav>
